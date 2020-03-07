@@ -1,0 +1,24 @@
+{
+  "name": "parsecalendar",
+  "version": "1.0.0",
+  "description": "parse gcal input to get attendee information",
+  "main": "node.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/away168/zapier-gcal-parseattendee.git"
+  },
+  "keywords": [
+    "zapier",
+    "gcal",
+    "attendee"
+  ],
+  "author": "Andrew Way",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/away168/zapier-gcal-parseattendee/issues"
+  },
+  "homepage": "https://github.com/away168/zapier-gcal-parseattendee#readme"
+}
