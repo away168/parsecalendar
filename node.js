@@ -14,29 +14,32 @@ function processContents(err, contents) {
 
     lines = contents.split('\n');
 
+    //lines = inputData.attendees.split('\n');
+    
     for (line of lines) {
-        i++;
-        console.log(i + ": " + line);
-        keyvalue = line.split(':');
-        key = keyvalue[0];
-        value = keyvalue[1];
-        
-        if (key == "email")
-        {
-            if (value.trim() == "andrew.way@armory.io")
-            {
-                foundEmail = true;
-                console.log ("    email found!");
-            }
-        }
-        if (key == "responseStatus")
-        {
-            console.log (value)
-
-            if (value.trim() == "accepted" && foundEmail)
-            {
-                console.log ("   I accepted this event");
-            }
-        }
+          i++;
+          console.log(i + ": " + line);
+          keyvalue = line.split(':');
+          key = keyvalue[0].trim();
+          value = keyvalue[1].trim();
+          if (key == "email")
+          {
+              if (value == "andrew.way@armory.io")
+              {
+                  foundEmail = true;
+                  console.log ("    email found!");
+              }
+          }
+          if (key == "responseStatus" && foundEmail)
+          {
+              console.log (value)
+    
+              if (value == "accepted")
+              {
+                 console.log ("   I accepted this event");
+                 output = {"accepted": true};
+                 break;
+              }
+          }
     }
 }
