@@ -1,7 +1,7 @@
 // output is the value that Zapier is expecting when the js returns
-output = {responseStatus: "accepted"};
 if (inputData.attendees === undefined)
 {
+  output = {responseStatus: "unknown"};
   return output;
 }
 
@@ -54,9 +54,10 @@ for (var line of lines) {
           if (value == "declined")
           {
              console.log("   I see that I did NOT accept it");
-             break;
           }
           console.log("    I found myself and will stop processing : " + value);
-          return output = {responseStatus: value};
+          output = {repsonseStatus: value};
+          break;
       }
 }
+return output;
